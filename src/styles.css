@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+:root {
+    --dark:                       #191F1D;
+    --accent:                     #D8E0BD;
+    --primary-color:              #3E6660;
+    --base:                       #F2F7EF;
+    --white:                      #F7F7F7;
+    --padding-content:              2rem;
+}
+
+*, ::after, ::before { box-sizing: border-box; }
+
+html, body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark);
+    background-color: var(--base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+h1 { font-size: 2.5rem; }
+
+h2 { font-size: 2rem; }
+
+h4 { font-size: 1.5rem; }
+
+.text--primary { color: var(--primary-color); }
+
+.mr-1 { margin-right: 1rem; }
+
+.button {
+    outline: none;
+    border: none;
+    border-radius: .3rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button--primary {
+    border: .08rem solid var(--dark);
+    background-color: var(--primary-color);
+    color: var(--white);
+    transition: all .2s;
+}
+
+.button--primary:hover, .button--primary:active, .button--primary:focus, .button--active {
+    background-color: var(--accent);
+    color: var(--dark);
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.05);
+}
