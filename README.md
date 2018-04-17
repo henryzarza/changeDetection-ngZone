@@ -1,14 +1,14 @@
 # ChangeDetection
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This one is an example to show the functioning of **Change Detection** in **Angular**
+
+This project is for the community [Angular Medellín](https://github.com/angular-medellin/)
+![Banner Angular Medellín](https://raw.githubusercontent.com/angular-medellin/meetup/master/assets/images/angular-medellin-banner.png "Angular Medellín")
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
