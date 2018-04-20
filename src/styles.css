@@ -2,11 +2,16 @@
 
 :root {
   --dark:           #0d151f;
-  --accent:         #e8efb9;
+  --active:         #1E9079;
   --primary-color:  #1e3734;
   --base:           #fbf8e933;
   --white:          #fff;
   --padding-content:  2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 *,
@@ -57,6 +62,33 @@ h4 {
   margin-right: 1rem;
 }
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.button {
+  border: 0.1rem solid var(--primary-color);
+  padding: .5rem 1rem;
+  border-radius: 0.15rem;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  background-color: var(--primary-color);
+  border-color: var(--white);
+  color: var(--white);
+  box-shadow: 0 0.15rem 0.8rem rgba(0, 0, 0, 0.16),
+              0 0.18rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
 .link__header {
   border: 0.1rem solid var(--primary-color);
   padding: .5rem 1rem;
@@ -70,8 +102,6 @@ h4 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   position: relative;
-  box-shadow: 0 0.15rem 0.8rem rgba(0, 0, 0, 0.16),
-              0 0.18rem 0.5rem rgba(0, 0, 0, 0.1);
   color: var(--primary-color);
   transition: all 0.3s ease;
   z-index: 1;
@@ -105,4 +135,98 @@ h4 {
   left: 0;
   right: 0;
   opacity: 1;
+}
+
+/*
+  Styles of tree
+  Based on http://thecodeplayer.com/walkthrough/css3-family-tree
+*/
+.tree ul {
+  padding-top: 1.2rem;
+  position: relative;
+	transition: all 0.5s;
+}
+
+.tree li {
+  float: left;
+  text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 1.2rem .3rem 0 .3rem;
+	transition: all 0.5s;
+}
+
+.tree li::before,
+.tree li::after{
+	content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+	border-top: .2rem solid var(--primary-color);
+  width: 50%;
+  height: 1.3rem;
+}
+
+.tree li::after{
+  right: auto;
+  left: 50%;
+	border-left: .2rem solid var(--primary-color);
+}
+
+.tree li:only-child::after,
+.tree li:only-child::before {
+	display: none;
+}
+
+.tree li:only-child{ padding-top: 0;}
+
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+
+.tree li:last-child::before {
+	border-right: .2rem solid var(--primary-color);
+	border-radius: 0 .3rem 0 0;
+}
+
+.tree li:first-child::after {
+	border-radius: .3rem 0 0 0;
+}
+
+.tree ul ul::before {
+	content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+	border-left: .2rem solid var(--primary-color);
+  width: 0;
+  height: 1.3rem;
+}
+
+.tree li a{
+	border: .2rem solid var(--primary-color);
+	padding: .5rem 1rem;
+	text-decoration: none;
+	color: var(--primary-color);
+	font-weight: bold;
+	display: inline-block;
+	border-radius: .2rem;	
+	transition: all 0.5s;
+}
+
+.tree li a:hover,
+.tree li a:hover+ul li a {
+  cursor: default;
+  background-color: var(--active);
+  color: var(--white);
+  border-color: var(--white);
+  box-shadow: 0 0.15rem 0.8rem rgba(0, 0, 0, 0.16),
+              0 0.18rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+	border-color:  var(--active);
 }
