@@ -1,68 +1,108 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 
 :root {
-    --dark:                       #191F1D;
-    --accent:                     #D8E0BD;
-    --primary-color:              #3E6660;
-    --base:                       #F2F7EF;
-    --white:                      #F7F7F7;
-    --padding-content:              2rem;
+  --dark:           #0d151f;
+  --accent:         #e8efb9;
+  --primary-color:  #1e3734;
+  --base:           #fbf8e933;
+  --white:          #fff;
+  --padding-content:  2rem;
 }
 
-*, ::after, ::before { box-sizing: border-box; }
-
-html, body {
-    font-family: 'Raleway', sans-serif;
-    line-height: 1.5;
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--dark);
-    background-color: var(--base);
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    margin-bottom: .5rem;
-    font-weight: bold;
+html,
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--dark);
+  background-color: var(--base);
 }
 
-h1 { font-size: 2.5rem; }
-
-h2 { font-size: 2rem; }
-
-h4 { font-size: 1.5rem; }
-
-.text--primary { color: var(--primary-color); }
-
-.mr-1 { margin-right: 1rem; }
-
-.button {
-    outline: none;
-    border: none;
-    border-radius: .3rem;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-family: inherit;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
-.button--primary {
-    border: .08rem solid var(--dark);
-    background-color: var(--primary-color);
-    color: var(--white);
-    transition: all .2s;
+h1 {
+  font-size: 2.5rem;
 }
 
-.button--primary:hover, .button--primary:active, .button--primary:focus, .button--active {
-    background-color: var(--accent);
-    color: var(--dark);
-    box-shadow: 0 .2rem .5rem rgba(0,0,0,.05);
+h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+.text--primary {
+  color: var(--primary-color);
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.link__header {
+  border: 0.1rem solid var(--primary-color);
+  padding: .5rem 1rem;
+  border-radius: 0.15rem;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  position: relative;
+  box-shadow: 0 0.15rem 0.8rem rgba(0, 0, 0, 0.16),
+              0 0.18rem 0.5rem rgba(0, 0, 0, 0.1);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.link__header:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--primary-color);
+}
+
+.link__header:hover,
+.link__header:active,
+.link__header:focus,
+.link__header--active {
+  color: var(--white);
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.6);
+}
+
+.link__header:hover:before,
+.link__header:active:before,
+.link__header:focus:before,
+.link__header--active:before {
+  left: 0;
+  right: 0;
+  opacity: 1;
 }
