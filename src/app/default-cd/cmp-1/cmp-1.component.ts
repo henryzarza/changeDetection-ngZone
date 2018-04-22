@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewChecked, ElementRef, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-cmp-1',
@@ -17,8 +17,18 @@ import { Component, OnInit } from '@angular/core';
     </ul>
   `
 })
-export class Cmp1Component implements OnInit {
-  constructor() {}
+export class Cmp1Component implements AfterViewChecked {
 
-  ngOnInit() {}
+  constructor(private el: ElementRef, private zone: NgZone) {}
+
+  ngAfterViewChecked() {
+    const a = this.el.nativeElement.querySelector('a');
+    a.classList.add('checked');
+    this.zone.runOutsideAngular(() => {
+      setTimeout(() => {
+        a.classList.remove('checked');
+        console.log('cmp1', this.el.nativeElement);
+        }, 2000);
+    });
+  }
 }

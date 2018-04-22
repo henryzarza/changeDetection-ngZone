@@ -3,6 +3,7 @@
 :root {
   --dark:           #0d151f;
   --active:         #1E9079;
+  --checked:        #F70042;
   --primary-color:  #1e3734;
   --base:           #fbf8e933;
   --white:          #fff;
@@ -203,14 +204,14 @@ h4 {
   height: 1.3rem;
 }
 
-.tree li a{
+.tree li a {
 	border: .2rem solid var(--primary-color);
 	padding: .5rem 1rem;
 	text-decoration: none;
 	color: var(--primary-color);
 	font-weight: bold;
 	display: inline-block;
-	border-radius: .2rem;	
+	border-radius: .2rem;
 	transition: all 0.5s;
 }
 
@@ -224,9 +225,17 @@ h4 {
               0 0.18rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
-.tree li a:hover+ul li::after, 
-.tree li a:hover+ul li::before, 
-.tree li a:hover+ul::before, 
+.tree li a:hover+ul li::after,
+.tree li a:hover+ul li::before,
+.tree li a:hover+ul::before,
 .tree li a:hover+ul ul::before{
 	border-color:  var(--active);
+}
+
+.tree li a.checked {
+  background-color: var(--checked);
+  color: var(--white);
+  border-color: var(--white);
+  box-shadow: 0 0.15rem 1.8rem rgba(0, 0, 0, 1),
+              0 0.18rem 0.5rem rgba(0, 0, 0, .1);
 }

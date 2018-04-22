@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewChecked, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-cmp-2',
@@ -9,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
         <app-cmp-5></app-cmp-5>
       </li>
     </ul>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Cmp2Component implements OnInit {
+export class Cmp2Component implements AfterViewChecked {
 
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewChecked () {
+    console.log('cmp2');
   }
 
 }
