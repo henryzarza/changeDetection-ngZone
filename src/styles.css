@@ -181,7 +181,10 @@ h4 {
 	display: none;
 }
 
-.tree li:only-child{ padding-top: 0;}
+.tree li:only-child{
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
 
 .tree li:first-child::before, .tree li:last-child::after{
 	border: 0 none;
@@ -236,11 +239,11 @@ h4 {
 }
 
 .tree li a.checked {
-  background-color: var(--checked);
+  background-color: var(--checked) !important;
   color: var(--white);
   border-color: var(--white);
   box-shadow: 0 0.15rem 1.8rem rgba(0, 0, 0, 1),
-              0 0.18rem 0.5rem rgba(0, 0, 0, .1);
+              0 0.18rem 0.5rem rgba(0, 0, 0, .1) !important;
 }
 
 .cmp__onpush {
@@ -257,6 +260,7 @@ h4 {
 }
 
 .link__click {
+  cursor: pointer !important;
   animation: clicked 1s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
 }
 

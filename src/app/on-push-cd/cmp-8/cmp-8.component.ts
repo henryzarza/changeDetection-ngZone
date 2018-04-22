@@ -1,20 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, AfterViewChecked, ElementRef, NgZone } from '@angular/core';
+import { toggleClass } from '../../toggle-class';
 
 @Component({
   selector: 'app-cmp-8',
   template: `
-    <a>
-      <span class="cmp__onpush">OnPush</span>
-      Cmp 8
-    </a>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    <a>Cmp 8</a>
+  `
 })
-export class Cmp8Component implements OnInit {
+export class Cmp8Component implements AfterViewChecked {
 
-  constructor() { }
+  constructor(private el: ElementRef, private zone: NgZone) {}
 
-  ngOnInit() {
+  ngAfterViewChecked() {
+    toggleClass(this.el, this.zone);
   }
-
 }

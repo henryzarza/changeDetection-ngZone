@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, AfterViewChecked, ElementRef, NgZone } from '@angular/core';
+import { toggleClass } from '../../toggle-class';
 
 @Component({
   selector: 'app-cmp-2',
@@ -18,11 +19,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Cmp2Component implements OnInit {
+export class Cmp2Component implements AfterViewChecked {
 
-  constructor() { }
+  constructor(private el: ElementRef, private zone: NgZone) {}
 
-  ngOnInit() {
+  ngAfterViewChecked() {
+    toggleClass(this.el, this.zone);
   }
-
 }

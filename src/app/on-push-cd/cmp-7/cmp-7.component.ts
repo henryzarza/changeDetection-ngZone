@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewChecked, ElementRef, NgZone } from '@angular/core';
+import { toggleClass } from '../../toggle-class';
 
 @Component({
   selector: 'app-cmp-7',
@@ -11,11 +12,11 @@ import { Component, OnInit } from '@angular/core';
     </ul>
   `
 })
-export class Cmp7Component implements OnInit {
+export class Cmp7Component implements AfterViewChecked {
 
-  constructor() { }
+  constructor(private el: ElementRef, private zone: NgZone) {}
 
-  ngOnInit() {
+  ngAfterViewChecked() {
+    toggleClass(this.el, this.zone);
   }
-
 }
