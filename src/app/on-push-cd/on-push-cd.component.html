@@ -1,3 +1,85 @@
-<p>
-  on-push-cd works!
-</p>
+<div class="container_info">
+  <p class="mb-1">
+    This demo shows how change detection skips a component's subtree when
+    it's set to <code>OnPush</code> and non of its input property change or an
+    event is fired inside that component.
+  </p>
+  <button class="button" (click)="null">Trigger CD</button>
+</div>
+
+<div class="tree">
+  <ul>
+    <li>
+      <a>Cmp 1</a>
+      <ul>
+        <li>
+          <a>Cmp 2</a>
+          <ul>
+            <li>
+              <a>Cmp 4</a>
+              <ul>
+                <li>
+                  <a>Cmp 8</a>
+                </li>
+                <li>
+                  <a>Cmp 9</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a>Cmp 5</a>
+              <ul>
+                <li>
+                  <a>Cmp 10</a>
+                  <ul>
+                    <li>
+                      <a>Cmp 12</a>
+                    </li>
+                    <li>
+                      <a>Cmp 13</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a>Cmp 3</a>
+          <ul>
+            <li>
+              <a>Cmp 6</a>
+            </li>
+            <li>
+              <a>Cmp 7</a>
+              <ul>
+                <li>
+                  <a>Cmp 11</a>
+                  <ul>
+                    <li>
+                      <a>Cmp 14</a>
+                    </li>
+                    <li>
+                      <a>Cmp 15</a>
+                      <ul>
+                        <li>
+                          <a>Cmp 16</a>
+                        </li>
+                        <li>
+                          <a>Cmp 17</a>
+                        </li>
+                        <li>
+                          <a>Cmp 18</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

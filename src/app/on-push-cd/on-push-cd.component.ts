@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-on-push-cd',
-  templateUrl: './on-push-cd.component.html',
-  styleUrls: ['./on-push-cd.component.css']
+  templateUrl: './on-push-cd.component.html'
 })
 export class OnPushCdComponent implements OnInit {
 
