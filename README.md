@@ -1,7 +1,7 @@
-# ChangeDetection
+# ChangeDetection-ngZone
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
-This one is an example to show the functioning of **Change Detection** in **Angular**
+This one is an example to show the functioning of **Change Detection** and **ngZone** in **Angular**
 
 This project is for the community [Angular Medellín](https://github.com/angular-medellin/)
 ![Banner Angular Medellín](https://raw.githubusercontent.com/angular-medellin/meetup/master/assets/images/angular-medellin-banner.png "Angular Medellín")
