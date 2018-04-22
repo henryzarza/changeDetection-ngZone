@@ -4,6 +4,7 @@
   --dark:           #0d151f;
   --active:         #1E9079;
   --checked:        #F70042;
+  --green:          #60E245;
   --primary-color:  #1e3734;
   --base:           #fbf8e933;
   --white:          #fff;
@@ -207,7 +208,8 @@ h4 {
 
 .tree li a {
 	border: .2rem solid var(--primary-color);
-	padding: .5rem 1rem;
+  padding: .5rem 1rem;
+  position: relative;
 	text-decoration: none;
 	color: var(--primary-color);
 	font-weight: bold;
@@ -239,4 +241,32 @@ h4 {
   border-color: var(--white);
   box-shadow: 0 0.15rem 1.8rem rgba(0, 0, 0, 1),
               0 0.18rem 0.5rem rgba(0, 0, 0, .1);
+}
+
+.cmp__onpush {
+  background-color: var(--green);
+  color: var(--dark);
+  font-weight: bolder;
+  padding: .2rem;
+  font-size: .8em;
+  border-radius: .2rem;
+  border: .1rem solid var(--dark);
+  position: absolute;
+  top: -.95rem;
+  left: -2rem;
+}
+
+.link__click {
+  animation: clicked 1s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+}
+
+@keyframes clicked {
+  to {
+    transform: scale(1);
+    box-shadow: 0;
+  }
+  from {
+    transform: scale(1.02);
+    box-shadow: 0 0.2rem 1.8rem var(--green);
+  }
 }
