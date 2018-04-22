@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cmp-6',
-  templateUrl: './cmp-6.component.html'
+  template: `<a>Cmp 6</a>`
 })
 export class Cmp6Component implements OnInit {
 

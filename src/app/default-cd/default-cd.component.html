@@ -1,57 +1,14 @@
 <div class="container_info">
   <p class="mb-1">
     This demo shows how change detection is performed for each component after every VM turn.
-  </p> 
+  </p>
   <button class="button" (click)="null">Trigger CD</button>
 </div>
 
 <div class="tree">
   <ul>
     <li>
-      <a>Cmp 1</a>
-      <ul>
-        <li>
-          <a>Cmp 2</a>
-          <ul>
-            <li>
-              <a>Cmp 3</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a>Cmp 5</a>
-          <ul>
-            <li>
-              <a>Cmp 6</a>
-            </li>
-            <li>
-              <a>Cmp 7</a>
-              <ul>
-                <li>
-                  <a>Cmp 10</a>
-                </li>
-                <li>
-                  <a>Cmp 11</a>
-                </li>
-                <li>
-                  <a>Cmp 12</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a>Cmp 4</a>
-          <ul>
-            <li>
-              <a>Cmp 8</a>
-            </li>
-            <li>
-              <a>Cmp 9</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <app-cmp-1></app-cmp-1>
     </li>
   </ul>
 </div>
