@@ -7,6 +7,7 @@ import { OnPushCdComponent } from './on-push-cd/on-push-cd.component';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { DefaultCdModule } from './default-cd/default-cd.module';
 import { OnPushCdModule } from './on-push-cd/on-push-cd.module';
+import { NgZoneComponent } from './ng-zone/ng-zone.component';
 
 const ROUTES: Routes = [
   {
@@ -21,12 +22,17 @@ const ROUTES: Routes = [
   {
     path: 'onpush-cd',
     component: OnPushCdComponent
+  },
+  {
+    path: 'ng-zone',
+    component: NgZoneComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NgZoneComponent
   ],
   imports: [
     BrowserModule,
