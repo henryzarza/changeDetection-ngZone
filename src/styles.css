@@ -240,7 +240,3 @@ h4 {
   box-shadow: 0 0.15rem 1.8rem rgba(0, 0, 0, 1),
               0 0.18rem 0.5rem rgba(0, 0, 0, .1);
 }
-
-.tree li a.test {
-  background-color: yellow;
-}

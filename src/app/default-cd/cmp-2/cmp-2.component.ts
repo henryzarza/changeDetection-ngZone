@@ -1,4 +1,4 @@
-import { Component, AfterViewChecked, ChangeDetectionStrategy, ElementRef, NgZone } from '@angular/core';
+import { Component, AfterViewChecked, ElementRef, NgZone } from '@angular/core';
 import { toggleClass } from '../../toggle-class';
 
 @Component({

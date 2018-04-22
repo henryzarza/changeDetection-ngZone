@@ -1,14 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-default-cd',
   templateUrl: './default-cd.component.html'
 })
-export class DefaultCdComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class DefaultCdComponent { }
