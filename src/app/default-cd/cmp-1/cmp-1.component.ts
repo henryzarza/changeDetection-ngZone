@@ -1,4 +1,5 @@
 import { Component, AfterViewChecked, ElementRef, NgZone } from '@angular/core';
+import { toggleClass } from '../../toggle-class';
 
 @Component({
   selector: 'app-cmp-1',
@@ -22,13 +23,6 @@ export class Cmp1Component implements AfterViewChecked {
   constructor(private el: ElementRef, private zone: NgZone) {}
 
   ngAfterViewChecked() {
-    const a = this.el.nativeElement.querySelector('a');
-    a.classList.add('checked');
-    this.zone.runOutsideAngular(() => {
-      setTimeout(() => {
-        a.classList.remove('checked');
-        console.log('cmp1', this.el.nativeElement);
-        }, 2000);
-    });
+    toggleClass(this.el, this.zone);
   }
 }

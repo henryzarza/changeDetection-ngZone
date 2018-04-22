@@ -26,7 +26,7 @@ body {
   font-family: "Raleway", sans-serif;
   line-height: 1.5;
   margin: 0;
-  font-size: 1rem;
+  font-size: 13pt;
   font-weight: 400;
   color: var(--dark);
   background-color: var(--base);
@@ -83,6 +83,7 @@ h4 {
 .button:hover,
 .button:focus,
 .button:active {
+  outline: none;
   background-color: var(--primary-color);
   border-color: var(--white);
   color: var(--white);
@@ -91,7 +92,7 @@ h4 {
 }
 
 .link__header {
-  border: 0.1rem solid var(--primary-color);
+  border: 0.11rem solid var(--primary-color);
   padding: .5rem 1rem;
   border-radius: 0.15rem;
   white-space: nowrap;
@@ -153,7 +154,7 @@ h4 {
   text-align: center;
 	list-style-type: none;
 	position: relative;
-	padding: 1.2rem .3rem 0 .3rem;
+	padding: 1.2rem .6rem 0 .3rem;
 	transition: all 0.5s;
 }
 
@@ -199,7 +200,7 @@ h4 {
   position: absolute;
   top: 0;
   left: 50%;
-	border-left: .2rem solid var(--primary-color);
+	border-left: .21rem solid var(--primary-color);
   width: 0;
   height: 1.3rem;
 }
@@ -238,4 +239,8 @@ h4 {
   border-color: var(--white);
   box-shadow: 0 0.15rem 1.8rem rgba(0, 0, 0, 1),
               0 0.18rem 0.5rem rgba(0, 0, 0, .1);
+}
+
+.tree li a.test {
+  background-color: yellow;
 }

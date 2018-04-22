@@ -1,4 +1,5 @@
-import { Component, AfterViewChecked, ChangeDetectionStrategy } from '@angular/core';
+import { Component, AfterViewChecked, ChangeDetectionStrategy, ElementRef, NgZone } from '@angular/core';
+import { toggleClass } from '../../toggle-class';
 
 @Component({
   selector: 'app-cmp-2',
@@ -9,15 +10,14 @@ import { Component, AfterViewChecked, ChangeDetectionStrategy } from '@angular/c
         <app-cmp-5></app-cmp-5>
       </li>
     </ul>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  `
 })
 export class Cmp2Component implements AfterViewChecked {
 
-  constructor() { }
+  constructor(private el: ElementRef, private zone: NgZone) {}
 
-  ngAfterViewChecked () {
-    console.log('cmp2');
+  ngAfterViewChecked() {
+    toggleClass(this.el, this.zone);
   }
 
 }
