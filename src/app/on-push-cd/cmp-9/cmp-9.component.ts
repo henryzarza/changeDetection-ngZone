@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cmp-9',
-  template: `./cmp-1.component.html`
+  template: `
+    <a>Cmp 9</a>
+  `
 })
 export class Cmp9Component implements OnInit {
 
