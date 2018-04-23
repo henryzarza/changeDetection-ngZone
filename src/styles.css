@@ -8,6 +8,8 @@
   --primary-color:  #1e3734;
   --base:           #fbf8e933;
   --white:          #fff;
+  --font-exercise:  #99cdb0;
+  --pink:           #dd3a9b;
   --padding-content:  2rem;
 }
 
@@ -66,6 +68,10 @@ h4 {
 
 .mb-1 {
   margin-bottom: 1rem;
+}
+
+.text--center {
+  text-align: center;
 }
 
 .button {

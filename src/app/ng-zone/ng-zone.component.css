@@ -1,0 +1,45 @@
+.container__buton {
+    display: flex;
+    justify-content: center;
+}
+
+.text--pink {
+    color: var(--pink);
+}
+
+.total__time {
+    font-size: 1.8rem;
+    color: var(--pink);
+    text-shadow: 0 0.15rem 0.8rem var(--pink);    
+}
+
+.button--exercise {
+    background-color: var(--pink);
+    color: var(--white);
+    border-width: 0.08rem;
+}
+
+.button--exercise:hover,
+.button--exercise:focus
+.button--exercise:active {
+    background-color: var(--white);
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+.container_exercises {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 20rem;
+    border-radius: .25rem;
+    background-color: var(--font-exercise);
+}
+
+.exercise--abdominals {
+    margin: 0 auto;
+    width: 13.75rem;
+    height: 7.8rem;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url(assets/abdominals.png);
+}
