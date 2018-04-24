@@ -32,7 +32,7 @@
     padding: 1rem;
     width: 20rem;
     border-radius: .25rem;
-    background-color: var(--font-exercise);
+    background: linear-gradient(60deg, var(--pink), var(--pink-light));
 }
 
 .exercise--abdominals {
@@ -41,5 +41,5 @@
     height: 7.8rem;
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-image: url(assets/abdominals.png);
+    background-image: url('assets/abdominals.png');
 }

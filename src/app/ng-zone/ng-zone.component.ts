@@ -1,47 +1,53 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, AfterViewInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-ng-zone',
   templateUrl: './ng-zone.component.html',
   styleUrls: ['./ng-zone.component.css']
 })
-export class NgZoneComponent {
+export class NgZoneComponent implements AfterViewInit {
 
-  progress: number = 0;
-  label: string;
-  time: number = 10;
+  message: string;
+  messageFinish: string;
+  time = 0;
 
-  constructor(private zone: NgZone) { }
+  private timeTotal = 40; //quantity of exercises (4) * time of each one
 
-  // Loop inside the Angular zone
-  // so the UI DOES refresh after each setTimeout cycle
-  processWithinAngularZone() {
-    this.label = 'inside';
-    this.progress = 0;
-    this._increaseProgress(() => console.log('Inside Done!'));
+  constructor(private zone: NgZone, private el: ElementRef) { }
+
+  ngAfterViewInit() {
+    const refAbdominals = this.el.nativeElement.querySelector('#abdominals');
+    /* refAbdominals.addEventListener('mouseenter', (e) => {
+      console.log('mouseenter');
+    }); */
   }
 
-  // Loop outside of the Angular zone
-  // so the UI DOES NOT refresh after each setTimeout cycle
-  processOutsideOfAngularZone() {
-    this.label = 'outside';
-    this.progress = 0;
+  startWithTimer() {
+    this.message = 'with timer';
+    this.messageFinish = null;
+    this.time = 0;
+    this.incrementTimer();
+  }
+
+  startWithoutTimer() {
+    this.message = 'without timer';
+    this.messageFinish = null;
+    this.time = 0;
+
     this.zone.runOutsideAngular(() => {
-      this._increaseProgress(() => {
-        // reenter the Angular zone and display done
-        this.zone.run(() => { console.log('Outside Done!'); });
-      });
+      this.incrementTimer(true);
     });
   }
 
-  _increaseProgress(doneCallback: () => void) {
-    this.progress += 1;
-    console.log(`Current progress: ${this.progress}%`);
+  incrementTimer(outsideZone = false) {
+    this.time++;
+    console.log(`Current time: ${this.time}`);
 
-    if (this.progress < 100) {
-      window.setTimeout(() => this._increaseProgress(doneCallback), 10);
-    } else {
-      doneCallback();
+    if (this.time < this.timeTotal)
+      setTimeout(() => this.incrementTimer(outsideZone), 100);
+    else {
+      this.messageFinish = 'This girl is on fire!'
+      outsideZone && this.zone.run(() => console.log('%c Finish outside zone', 'background: #F70042; color: #fff'));
     }
   }
 }
