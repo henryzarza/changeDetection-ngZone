@@ -16,10 +16,12 @@ export class NgZoneComponent implements AfterViewInit {
   constructor(private zone: NgZone, private el: ElementRef) { }
 
   ngAfterViewInit() {
-    const refAbdominals = this.el.nativeElement.querySelector('#abdominals');
-    /* refAbdominals.addEventListener('mouseenter', (e) => {
-      console.log('mouseenter');
-    }); */
+    const refAbdominals = this.el.nativeElement.querySelector('.exercise--squats');
+    let iterator = 0;
+    setInterval(() => {
+      refAbdominals.setAttribute('frame', iterator++);
+      if (iterator >= 45) iterator = 0;
+    }, 50);
   }
 
   startWithTimer() {
