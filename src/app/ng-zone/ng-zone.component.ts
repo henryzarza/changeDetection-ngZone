@@ -1,4 +1,5 @@
 import { Component, NgZone, AfterViewInit, ElementRef } from '@angular/core';
+import { initAnimation } from './animation-exercise';
 
 @Component({
   selector: 'app-ng-zone',
@@ -16,12 +17,12 @@ export class NgZoneComponent implements AfterViewInit {
   constructor(private zone: NgZone, private el: ElementRef) { }
 
   ngAfterViewInit() {
-    const refAbdominals = this.el.nativeElement.querySelector('.exercise--squats');
-    let iterator = 0;
-    setInterval(() => {
-      refAbdominals.setAttribute('frame', iterator++);
-      if (iterator >= 45) iterator = 0;
-    }, 50);
+    this.zone.runOutsideAngular(() => {
+      //initAnimation(this.el, '.exercise--squats', 52);
+      //initAnimation(this.el, '.exercise--abdominals', 52);
+      //initAnimation(this.el, '.exercise--bike', 52);
+      //initAnimation(this.el, '.exercise--dancing', 47);
+    });
   }
 
   startWithTimer() {

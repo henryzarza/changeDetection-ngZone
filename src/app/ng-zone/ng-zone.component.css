@@ -35,203 +35,31 @@
     background: linear-gradient(60deg, var(--pink), var(--pink-light));
 }
 
-/* .exercise--abdominals {
+.excercise__item {
     margin: 0 auto;
-    width: 13.75rem;
-    height: 7.8rem;
     background-repeat: no-repeat;
-    background-position: 0 0;
+}
+
+.exercise--abdominals {
+    width: 13.66rem;
+    height: 7.86rem;
     background-image: url('assets/abdominals.png');
-} */
+}
 
 .exercise--squats {
-    margin: 0 auto;
-    width: 187px;
-    height: 279px;
-    background-repeat: no-repeat;
+    width: 10.79rem;
+    height: 16.2rem;
     background-image: url('assets/squats.png');
 }
 
-.exercise--squats[frame="0"] {
-    background-position: -1px -1px
+.exercise--bike {
+    width: 17.5rem;
+    height: 16.85rem;
+    background-image: url('assets/bike.png');
 }
 
-.exercise--squats[frame="1"] {
-    background-position: -1px -1px
-}
-
-.exercise--squats[frame="2"] {
-    background-position: -1px -1px
-}
-
-.exercise--squats[frame="3"] {
-    background-position: -1px -1px
-}
-
-.exercise--squats[frame="4"] {
-    background-position: -190px -1px
-}
-
-.exercise--squats[frame="5"] {
-    background-position: -379px -1px
-}
-
-.exercise--squats[frame="6"] {
-    background-position: -568px -1px
-}
-
-.exercise--squats[frame="7"] {
-    background-position: -757px -1px
-}
-
-.exercise--squats[frame="8"] {
-    background-position: -946px -1px
-}
-
-.exercise--squats[frame="9"] {
-    background-position: -1135px -1px
-}
-
-.exercise--squats[frame="10"] {
-    background-position: -1324px -1px
-}
-
-.exercise--squats[frame="11"] {
-    background-position: -1513px -1px
-}
-
-.exercise--squats[frame="12"] {
-    background-position: -1702px -1px
-}
-
-.exercise--squats[frame="13"] {
-    background-position: -1px -282px
-}
-
-.exercise--squats[frame="14"] {
-    background-position: -190px -282px
-}
-
-.exercise--squats[frame="15"] {
-    background-position: -379px -282px
-}
-
-.exercise--squats[frame="16"] {
-    background-position: -568px -282px
-}
-
-.exercise--squats[frame="17"] {
-    background-position: -757px -282px
-}
-
-.exercise--squats[frame="18"] {
-    background-position: -946px -282px
-}
-
-.exercise--squats[frame="19"] {
-    background-position: -1135px -282px
-}
-
-.exercise--squats[frame="20"] {
-    background-position: -1324px -282px
-}
-
-.exercise--squats[frame="21"] {
-    background-position: -1513px -282px
-}
-
-.exercise--squats[frame="22"] {
-    background-position: -1702px -282px
-}
-
-.exercise--squats[frame="23"] {
-    background-position: -1px -563px
-}
-
-.exercise--squats[frame="24"] {
-    background-position: -1px -563px
-}
-
-.exercise--squats[frame="25"] {
-    background-position: -1px -563px
-}
-
-.exercise--squats[frame="26"] {
-    background-position: -1px -563px
-}
-
-.exercise--squats[frame="27"] {
-    background-position: -190px -563px
-}
-
-.exercise--squats[frame="28"] {
-    background-position: -379px -563px
-}
-
-.exercise--squats[frame="29"] {
-    background-position: -568px -563px
-}
-
-.exercise--squats[frame="30"] {
-    background-position: -757px -563px
-}
-
-.exercise--squats[frame="31"] {
-    background-position: -946px -563px
-}
-
-.exercise--squats[frame="32"] {
-    background-position: -1135px -563px
-}
-
-.exercise--squats[frame="33"] {
-    background-position: -1324px -563px
-}
-
-.exercise--squats[frame="34"] {
-    background-position: -1513px -563px
-}
-
-.exercise--squats[frame="35"] {
-    background-position: -1702px -563px
-}
-
-.exercise--squats[frame="36"] {
-    background-position: -1px -844px
-}
-
-.exercise--squats[frame="37"] {
-    background-position: -190px -844px
-}
-
-.exercise--squats[frame="38"] {
-    background-position: -379px -844px
-}
-
-.exercise--squats[frame="39"] {
-    background-position: -568px -844px
-}
-
-.exercise--squats[frame="40"] {
-    background-position: -757px -844px
-}
-
-.exercise--squats[frame="41"] {
-    background-position: -946px -844px
-}
-
-.exercise--squats[frame="42"] {
-    background-position: -1135px -844px
-}
-
-.exercise--squats[frame="43"] {
-    background-position: -1324px -844px
-}
-
-.exercise--squats[frame="44"] {
-    background-position: -1513px -844px
-}
-
-.exercise--squats[frame="45"] {
-    background-position: -1702px -844px
+.exercise--dancing {
+    width: 209px;
+    height: 294px;
+    background-image: url('assets/dancing.png');
 }
