@@ -29,37 +29,49 @@
 
 .container_exercises {
     margin: 0 auto;
-    padding: 1rem;
-    width: 20rem;
+    width: 23rem;
+    height: 20rem;
     border-radius: .25rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(60deg, var(--pink), var(--pink-light));
 }
 
 .excercise__item {
     margin: 0 auto;
     background-repeat: no-repeat;
+    background-position: 0 0;
+    position: absolute;
+    transform: scale(0);
+    transition: transform .2s linear;
+}
+
+.excercise__item--active {
+    transform: scale(1);
 }
 
 .exercise--abdominals {
     width: 13.66rem;
     height: 7.86rem;
-    background-image: url('assets/abdominals.png');
+    background-image: url('/assets/abdominals.png');
 }
 
 .exercise--squats {
     width: 10.79rem;
     height: 16.2rem;
-    background-image: url('assets/squats.png');
+    background-image: url('/assets/squats.png');
 }
 
 .exercise--bike {
     width: 17.5rem;
     height: 16.85rem;
-    background-image: url('assets/bike.png');
+    background-image: url('/assets/bike.png');
 }
 
 .exercise--dancing {
     width: 209px;
     height: 294px;
-    background-image: url('assets/dancing.png');
+    background-image: url('/assets/dancing.png');
 }

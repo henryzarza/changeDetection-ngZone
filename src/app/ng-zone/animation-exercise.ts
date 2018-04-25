@@ -179,36 +179,46 @@ const stepDancing = [
     ['-1689px -2073px']
 ];
 
+let interval;
+let element;
+
 export function initAnimation(ref, nameClass: string, frames: number) {
-    const element = ref.nativeElement.querySelector(nameClass);
+    element = ref.nativeElement.querySelector(nameClass);
     let iterator = 0;
-    //let interval;
-    //clearInterval(interval);
+    
+    ref.nativeElement.querySelector('.excercise__item--active').classList.remove('excercise__item--active');
+    element.classList.add('excercise__item--active');
 
     switch (nameClass) {
         case '.exercise--squats':
-            setInterval(() => {
+            interval = setInterval(() => {
                 element.style.backgroundPosition = stepSquats[iterator++];
                 if (iterator >= stepSquats.length) iterator = 0;
             }, frames);
             break;
         case '.exercise--abdominals':
-            setInterval(() => {
+            interval = setInterval(() => {
                 element.style.backgroundPosition = stepAbdominals[iterator++];
                 if (iterator >= stepAbdominals.length) iterator = 0;
             }, frames);
             break;
         case '.exercise--bike':
-            setInterval(() => {
+            interval = setInterval(() => {
                 element.style.backgroundPosition = stepBike[iterator++];
                 if (iterator >= stepBike.length) iterator = 0;
             }, frames);
             break;
         default:
-            setInterval(() => {
+            interval = setInterval(() => {
                 element.style.backgroundPosition = stepDancing[iterator++];
                 if (iterator >= stepDancing.length) iterator = 0;
             }, frames);
             break;
     }
+
+}
+
+export function stopAnimation() {
+    element.style.backgroundPosition = '0 0';
+    clearInterval(interval);
 }
