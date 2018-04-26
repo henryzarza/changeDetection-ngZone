@@ -11,51 +11,50 @@ export class NgZoneComponent {
   message: string;
   messageFinish: string;
   time = 0;
-  interval;
 
-  private timeTotal = 80; //quantity of exercises (4) * time of each one
-  private changeBetween = 20; //timetotal / quantity of exercises (4)
+  private timeTotal = 180; // quantity of exercises (4) * time of each one
+  private changeBetween = this.timeTotal / 4; // timetotal / quantity of exercises (4)
 
   constructor(private zone: NgZone, private el: ElementRef) { }
 
   startAnimations(type: number) {
-    console.log('entro', type);
     this.zone.runOutsideAngular(() => {
       switch (type) {
-        case 0:
+        case 0: {
+          this.message = 'Squats';
           initAnimation(this.el, '.exercise--squats', 52);
           break;
-        case 1:
+        }
+        case 1: {
+          this.message = 'Abdominals';
           initAnimation(this.el, '.exercise--abdominals', 52);
           break;
-        default:
+        }
+        case 2: {
+          this.message = 'Bike';
           initAnimation(this.el, '.exercise--bike', 52);
           break;
+        }
+        default: {
+          this.message = 'Dancing';
+          initAnimation(this.el, '.exercise--dancing', 47);
+          break;
+        }
       }
-      //initAnimation(this.el, '.exercise--squats', 52);
-      //initAnimation(this.el, '.exercise--abdominals', 52);
-      //initAnimation(this.el, '.exercise--bike', 52);
-      //initAnimation(this.el, '.exercise--dancing', 47);
     });
   }
 
   startWithTimer() {
-    this.message = 'with timer';
     this.messageFinish = null;
     this.time = 0;
+    this.startAnimations(0);
     this.incrementTimer();
   }
 
   startWithoutTimer() {
-    this.message = 'without timer';
     this.messageFinish = null;
     this.time = 0;
-
-    let i = 0;
-    //this.interval = setInterval(() => {
-    //  i = Math.ceil(this.timeTotal / 20);
-      this.startAnimations(0);
-    //}, 20);
+    this.startAnimations(0);
 
     this.zone.runOutsideAngular(() => {
       this.incrementTimer(true);
@@ -64,16 +63,21 @@ export class NgZoneComponent {
 
   incrementTimer(outsideZone = false) {
     this.time++;
-    //console.log(`Current time: ${this.time}`);
-    /* if (this.time === this.changeBetween)
-      this.startAnimations(1); */
+    console.log(`Current time: ${this.time}`);
+    if (this.time === this.changeBetween)
+      this.startAnimations(1);
+    else
+      if(this.time === (this.changeBetween*2))
+        this.startAnimations(2);
+      else
+        if(this.time === (this.changeBetween*3))
+          this.startAnimations(3);
 
     if (this.time < this.timeTotal)
       setTimeout(() => this.incrementTimer(outsideZone), 100);
     else {
       this.messageFinish = 'This girl is on fire!';
       stopAnimation();
-      clearInterval(this.interval);
       outsideZone && this.zone.run(() => console.log('%c Finish outside zone', 'background: #F70042; color: #fff'));
     }
   }

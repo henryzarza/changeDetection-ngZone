@@ -10,7 +10,7 @@
 .total__time {
     font-size: 1.8rem;
     color: var(--pink);
-    text-shadow: 0 0.15rem 0.8rem var(--pink);    
+    text-shadow: 0 0.15rem 0.8rem var(--pink);
 }
 
 .button--exercise {
@@ -74,4 +74,14 @@
     width: 209px;
     height: 294px;
     background-image: url('/assets/dancing.png');
+}
+
+.text__finish {
+  color: var(--pink);
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  text-shadow:
+    0px 2px 0 var(--pink-light),
+    2px 3px 0 var(--pink-light)
+  ;
 }

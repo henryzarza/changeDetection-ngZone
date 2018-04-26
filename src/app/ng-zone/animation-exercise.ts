@@ -185,9 +185,10 @@ let element;
 export function initAnimation(ref, nameClass: string, frames: number) {
     element = ref.nativeElement.querySelector(nameClass);
     let iterator = 0;
-    
+
     ref.nativeElement.querySelector('.excercise__item--active').classList.remove('excercise__item--active');
     element.classList.add('excercise__item--active');
+    clearInterval(interval);
 
     switch (nameClass) {
         case '.exercise--squats':
