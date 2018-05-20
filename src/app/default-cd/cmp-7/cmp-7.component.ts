@@ -1,10 +1,10 @@
-import { Component, AfterViewChecked, NgZone, ElementRef } from '@angular/core';
+import { Component, AfterViewChecked, NgZone, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { toggleClass } from '../../toggle-class';
 
 @Component({
   selector: 'app-cmp-7',
   template: `
-    <a>Cmp 7</a>
+    <a class="link__click" (click)="triggerCD()">Cmp 7</a>
     <ul>
       <li>
         <app-cmp-10></app-cmp-10>
@@ -20,10 +20,14 @@ import { toggleClass } from '../../toggle-class';
 })
 export class Cmp7Component implements AfterViewChecked {
 
-  constructor(private el: ElementRef, private zone: NgZone) {}
+  constructor(private el: ElementRef, private zone: NgZone, private cdRef: ChangeDetectorRef) {}
 
   ngAfterViewChecked() {
     toggleClass(this.el, this.zone);
+  }
+
+  triggerCD() {
+    //this.cdRef.detach();
   }
 
 }
